@@ -33,7 +33,20 @@ function usingSorting(stringConstant){
     return `Given string ${stringConstant} is unique`;
 }
 
+//with hash O(n)
+function usingHash(stringConstant){
+    let hashObj = {};
+    for(let i = 0; i < stringConstant.length; i++){
+        if(!hashObj[stringConstant[i]]){
+            hashObj[stringConstant[i]] =  stringConstant[i];
+        }else{
+            return `Given string ${stringConstant} is not unique`;
+        }
+    }
+    return `Given string ${stringConstant} is unique`;
+}
 
 console.log(usingBFMethod("Geeks"));
 console.log(usingPredefinedMethod("Hellllo"));
 console.log(usingSorting("HellooWorld"));
+console.log(usingHash("hel"));
